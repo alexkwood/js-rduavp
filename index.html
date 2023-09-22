@@ -1,0 +1,42 @@
+
+<div class="demo-container">
+  <div class="left-side">
+    <div class="graph-container">
+      <div id="form-graph" class="form-graph"></div>
+    </div>
+
+    <div class="data-bindings">
+      Data bindings goes here
+      <resize-handle top right></resize-handle>
+    </div>
+  </div>
+
+  <div class="right-side">
+    <div class="node-props">
+      <button style="float:right" id="load-visjs-data">Load VisJs Data</button>
+      <p>
+        This panel will update properties of a node.
+      </p>
+      <p>
+        It will respond to any event happens to the left-side graph panel, and update its contents dynamically.
+      </p>
+      <pre id="message" class="message">
+        Message goes here
+      </pre>
+    </div>
+
+    <div class="preview-container" id="preview-container">
+      <p>
+        This panel is to see preview of the form.
+      </p>
+      <p>
+        It will respond to the width/height of this panel, which means when its size is a mobile size, it display mobile form preview. When its size is a desktop size, it will displsy desktop form preview.
+      </p>
+      <p class="preview mobile">Mobile Preview</p>
+      <p class="preview tablet">Tablet Preview</p>
+      <p class="preview desktop">Desktop Preview</p>
+      <p class="preview bigscreen">Big Screen Preview</p>
+      <resize-handle top left></resize-handle>
+    </div>
+  </div>
+</div>

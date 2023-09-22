@@ -1,0 +1,85 @@
+@font-face{
+  font-family: 'JetBrainsMono';
+  src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/ttf/JetBrainsMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+* { box-sizing: border-box;}
+.demo-container {
+  display: flex;
+  height: 100%;
+  > * {
+    width: 50%;
+    /* NO flex: 1, this is not resizable */
+  }
+  > * > * {
+    border: 1px solid #ccc;
+    overflow: auto;
+    position: relative;
+    min-width: 120px;
+  }
+  .left-side {
+    height: calc(100vh - 20px);
+    .graph-container {
+      height: 90%;
+    }
+    .data-bindings {
+      height: 10%;
+    }
+  }
+  .right-side {
+    height: calc(100vh - 20px);
+    > * {
+      padding: 12px;
+    }
+    .node-props {
+      height: 50%;
+    }
+    .preview-container {
+      height: 50%;
+      .preview {
+        display: none;
+        font-family: JetBrainsMono, monospace;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+      }
+      &.mobile .preview.mobile {display: flex;}
+      &.tablet .preview.tablet {display: flex;}
+      &.desktop .preview.desktop {display: flex;}
+      &.big-screen .preview.bigscreen {display: flex;}
+    }
+  }
+}
+
+.form-graph {
+  height: 100%;
+  position: relative;
+  font-family: JetBrainsMono, monospace;
+
+  .graph {
+    height: calc(100% - 80px);
+  }
+  .react-flow__node.selected .custom-node {
+    box-shadow: 0 0 0 0.5px #1a192b;
+  }
+  .react-flow__node.selected svg > * {
+    stroke-width: 4px;
+  }
+  .react-flow__node-submission.selected {
+    background: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cellipse cx='100' cy='50' rx='95' ry='48' fill='%23CBC3E3' stroke='%23333' stroke-width='4' /%3E%3C/svg%3E") no-repeat center center;
+  }
+
+  .node-types {
+    background: #fcfcfc;
+    border: 1px solid #CCC;
+    font-size: 12px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+  }
+}
